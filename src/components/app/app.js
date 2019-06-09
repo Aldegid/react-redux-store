@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
 import { withBookstoreService } from '../hoc';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import ShoppingCartTable from '../shopping-cart-table';
 
 import ShopHeader from '../shop-header';
 import { HomePage, CartPage } from '../pages';
-
-import Loader from '../loader';
 
 import './app.css';
 

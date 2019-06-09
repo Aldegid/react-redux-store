@@ -3,18 +3,22 @@ import BookListItem from '../book-list-item';
 import { connect } from 'react-redux';
 import { withBookstoreService } from '../hoc';
 import { booksLoaded } from '../../actions';
+import Loader from '../loader';
 
 import './book-list.css';
 
 class BookList extends Component {
   componentDidMount() {
     const { bookstoreService, booksLoaded } = this.props;
-    const books = bookstoreService.getBooks();
-    booksLoaded(books);
+    bookstoreService.getBooks().then(books => booksLoaded(books));
   }
 
   render() {
-    const { books } = this.props;
+    const { books, loading } = this.props;
+    if (loading) {
+      return <Loader />;
+    }
+    console.log(this.props);
     return (
       <ul className='book-list'>
         {books.map(book => {
@@ -29,8 +33,8 @@ class BookList extends Component {
   }
 }
 
-const mapStateToProps = ({ books }) => {
-  return { books };
+const mapStateToProps = ({ books, loading }) => {
+  return { books, loading };
 };
 
 const mapDispatchToProps = {
