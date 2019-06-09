@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { withBookstoreService } from '../hoc';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
+import ShoppingCartTable from '../shopping-cart-table';
+
+import ShopHeader from '../shop-header';
 import { HomePage, CartPage } from '../pages';
 
 import Loader from '../loader';
@@ -14,10 +17,14 @@ class App extends Component {
     const { bookstoreService } = this.props;
     console.log(bookstoreService.getBooks());
     return (
-      <Switch>
-        <Route path='/' component={HomePage} exact />
-        <Route path='/cart' component={CartPage} />
-      </Switch>
+      <main role='main' className='container'>
+        <ShopHeader numItems={5} total={200} />
+        <Switch>
+          <Route path='/' component={HomePage} exact />
+          <Route path='/cart' component={CartPage} />
+        </Switch>
+        <ShoppingCartTable />
+      </main>
     );
   }
 }
