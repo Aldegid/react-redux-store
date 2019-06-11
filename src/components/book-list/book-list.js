@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import BookListItem from '../book-list-item';
+
 import { connect } from 'react-redux';
 
 import { withBookstoreService } from '../hoc';
-import { fetchBooks, booksAddedToCart } from '../../actions';
+import { fetchBooks, bookAddedToCart } from '../../actions';
+import { compose } from '../../utils';
 
 import Loader from '../loader';
 import ErrorIndicator from '../error-indicator';
@@ -42,6 +44,7 @@ class BookListContainer extends Component {
     if (error) {
       return <ErrorIndicator />;
     }
+
     return <BookList books={books} onAddedToCart={onAddedToCart} />;
   }
 }
@@ -50,16 +53,17 @@ const mapStateToProps = ({ books, loading, error }) => {
   return { books, loading, error };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const { bookstoreService } = ownProps;
+const mapDispatchToProps = (dispatch, { bookstoreService }) => {
   return {
-    fetchBooks: fetchBooks(dispatch, bookstoreService),
-    onAddedToCart: id => dispatch(booksAddedToCart(id))
+    fetchBooks: fetchBooks(bookstoreService, dispatch),
+    onAddedToCart: id => dispatch(bookAddedToCart(id))
   };
 };
-export default withBookstoreService()(
+
+export default compose(
+  withBookstoreService(),
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(BookListContainer)
-);
+  )
+)(BookListContainer);
