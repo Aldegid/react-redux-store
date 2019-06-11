@@ -12,11 +12,9 @@ import './app.css';
 
 class App extends Component {
   render() {
-    const { bookstoreService } = this.props;
-    console.log(bookstoreService.getBooks());
     return (
       <main role='main' className='container'>
-        <ShopHeader numItems={5} total={200} />
+        <ShopHeader />
         <Switch>
           <Route path='/' component={HomePage} exact />
           <Route path='/cart' component={CartPage} />
