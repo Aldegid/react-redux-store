@@ -5,7 +5,7 @@
 
 .book-list-item .book-cover {
   flex-shrink: 0;
-  width: 200px;
+  width: 150px;
   margin-right: 30px;
 }
 
