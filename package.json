@@ -2,8 +2,9 @@
   "name": "react-redux-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Aldegid/react-redux-store",
+  "homepage": "https://aldegid.github.io/react-redux-store/",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
