@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Aldegid/react-redux-store/static/css/main.ccf0c409.chunk.css",
+    "main.js": "/Aldegid/react-redux-store/static/js/main.d681417f.chunk.js",
+    "main.js.map": "/Aldegid/react-redux-store/static/js/main.d681417f.chunk.js.map",
+    "runtime~main.js": "/Aldegid/react-redux-store/static/js/runtime~main.83e27452.js",
+    "runtime~main.js.map": "/Aldegid/react-redux-store/static/js/runtime~main.83e27452.js.map",
+    "static/js/2.1418b559.chunk.js": "/Aldegid/react-redux-store/static/js/2.1418b559.chunk.js",
+    "static/js/2.1418b559.chunk.js.map": "/Aldegid/react-redux-store/static/js/2.1418b559.chunk.js.map",
+    "index.html": "/Aldegid/react-redux-store/index.html",
+    "precache-manifest.5a45c4739a33a795ce5d5c36e7927b0c.js": "/Aldegid/react-redux-store/precache-manifest.5a45c4739a33a795ce5d5c36e7927b0c.js",
+    "service-worker.js": "/Aldegid/react-redux-store/service-worker.js",
+    "static/css/main.ccf0c409.chunk.css.map": "/Aldegid/react-redux-store/static/css/main.ccf0c409.chunk.css.map"
+  }
+}
